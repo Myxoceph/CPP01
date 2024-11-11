@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abakirca <abakirca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 20:11:58 by abakirca          #+#    #+#             */
-/*   Updated: 2024/11/11 16:50:15 by abakirca         ###   ########.fr       */
+/*   Created: 2024/11/11 17:08:38 by abakirca          #+#    #+#             */
+/*   Updated: 2024/11/11 17:52:31 by abakirca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
-int main()
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanA
 {
-	Zombie zombie1("Steve");
-	zombie1.announce();
-	std::cout << std::endl << "-----Zombie horde from now on-----" << std::endl << std::endl;
-	Zombie *zombies = zombie1.zombieHorde(5, "zombicik");
-	zombies[0].announce();
-	zombies[1].announce();
-	zombies[2].announce();
-	zombies[3].announce();
-	zombies[4].announce();
-	delete[] zombies;
-	return (0);
-}
+	private:
+		std::string name;
+		Weapon *weapon;
+	public:
+		void attack();
+		HumanA(std::string name, Weapon &weapon);
+};
+
+#endif

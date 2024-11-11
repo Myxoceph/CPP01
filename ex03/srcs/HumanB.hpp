@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abakirca <abakirca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 20:11:58 by abakirca          #+#    #+#             */
-/*   Updated: 2024/11/11 16:50:15 by abakirca         ###   ########.fr       */
+/*   Created: 2024/11/11 17:15:26 by abakirca          #+#    #+#             */
+/*   Updated: 2024/11/11 17:58:45 by abakirca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
 
-int main()
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanB
 {
-	Zombie zombie1("Steve");
-	zombie1.announce();
-	std::cout << std::endl << "-----Zombie horde from now on-----" << std::endl << std::endl;
-	Zombie *zombies = zombie1.zombieHorde(5, "zombicik");
-	zombies[0].announce();
-	zombies[1].announce();
-	zombies[2].announce();
-	zombies[3].announce();
-	zombies[4].announce();
-	delete[] zombies;
-	return (0);
-}
+	private:
+		std::string name;
+		Weapon *weapon;
+		bool hasweapon;
+		
+	public:
+		void attack();
+		void setWeapon(Weapon &weapon);
+		HumanB(std::string name);
+};
+
+#endif

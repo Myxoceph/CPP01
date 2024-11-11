@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abakirca <abakirca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 20:11:58 by abakirca          #+#    #+#             */
-/*   Updated: 2024/11/11 16:50:15 by abakirca         ###   ########.fr       */
+/*   Created: 2024/11/11 17:05:09 by abakirca          #+#    #+#             */
+/*   Updated: 2024/11/11 17:41:19 by abakirca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-int main()
+#include <iostream>
+
+class Weapon
 {
-	Zombie zombie1("Steve");
-	zombie1.announce();
-	std::cout << std::endl << "-----Zombie horde from now on-----" << std::endl << std::endl;
-	Zombie *zombies = zombie1.zombieHorde(5, "zombicik");
-	zombies[0].announce();
-	zombies[1].announce();
-	zombies[2].announce();
-	zombies[3].announce();
-	zombies[4].announce();
-	delete[] zombies;
-	return (0);
-}
+	private:
+		std::string type;
+	public:
+		const std::string getType();
+		void setType(std::string wptype);
+		Weapon(std::string name);
+};
+
+#endif

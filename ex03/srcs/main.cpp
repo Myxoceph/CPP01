@@ -5,24 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abakirca <abakirca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 20:11:58 by abakirca          #+#    #+#             */
-/*   Updated: 2024/11/11 16:50:15 by abakirca         ###   ########.fr       */
+/*   Created: 2024/11/11 17:29:57 by abakirca          #+#    #+#             */
+/*   Updated: 2024/11/11 17:59:26 by abakirca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {
-	Zombie zombie1("Steve");
-	zombie1.announce();
-	std::cout << std::endl << "-----Zombie horde from now on-----" << std::endl << std::endl;
-	Zombie *zombies = zombie1.zombieHorde(5, "zombicik");
-	zombies[0].announce();
-	zombies[1].announce();
-	zombies[2].announce();
-	zombies[3].announce();
-	zombies[4].announce();
-	delete[] zombies;
-	return (0);
+	{	
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{	
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return 0;
 }
