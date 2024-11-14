@@ -6,11 +6,11 @@
 #    By: abakirca <abakirca@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 18:02:07 by abakirca          #+#    #+#              #
-#    Updated: 2024/11/11 18:02:28 by abakirca         ###   ########.fr        #
+#    Updated: 2024/11/14 14:04:01 by abakirca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	sed
+NAME			=	replacer
 
 CC				=	c++
 CFLAGS			=	-Wall -Werror -Wextra -std=c++98
@@ -20,7 +20,7 @@ RM				=	rm -rf
 SRCS_DIR		=	./srcs/
 OBJS_DIR		=	./objs/
 
-SRCS 			=	$(SRCS_DIR)main.cpp
+SRCS 			=	$(SRCS_DIR)main.cpp $(SRCS_DIR)replacer.cpp
 
 OBJS			=	$(patsubst $(SRCS_DIR)%.cpp, $(OBJS_DIR)%.o, $(SRCS))
 
