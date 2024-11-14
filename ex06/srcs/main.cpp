@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replacer.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abakirca <abakirca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 13:06:02 by abakirca          #+#    #+#             */
-/*   Updated: 2024/11/14 13:17:00 by abakirca         ###   ########.fr       */
+/*   Created: 2024/11/14 14:57:50 by abakirca          #+#    #+#             */
+/*   Updated: 2024/11/14 15:20:08 by abakirca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACER_HPP
-#define REPLACER_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include <fstream>
-#include <string>
+int main(int ac, char **av)
+{
+	Harl harl;
 
-void	replace(char **av);
-
-#endif
+	if (ac == 2)
+		harl.complain(av[1]);
+	else
+		return (std::cout << "Too many arguments!" << std::endl, 1);
+	
+}
