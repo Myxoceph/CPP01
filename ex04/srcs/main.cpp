@@ -6,7 +6,7 @@
 /*   By: abakirca <abakirca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 18:02:54 by abakirca          #+#    #+#             */
-/*   Updated: 2024/11/14 16:08:56 by abakirca         ###   ########.fr       */
+/*   Updated: 2024/11/15 13:39:04 by abakirca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,14 @@ void replace(char **av)
 	std::string modifiedLine;
 	size_t startPos = 0;
 
-	fileoutname.append(".replace");
 	filein.open(filename, std::ios::in);
-	fileout.open(fileoutname.c_str(), std::ios::out);
-
 	if (!filein.is_open())
 	{
 		std::cerr << "File doesn't exist." << std::endl;
 		return;
 	}
+	fileoutname.append(".replace");
+	fileout.open(fileoutname.c_str(), std::ios::out);
 	while (std::getline(filein, read))
     {
         startPos = 0;
@@ -51,7 +50,6 @@ void replace(char **av)
         
         fileout << modifiedLine << std::endl;
     }
-
 	filein.close();
 	fileout.close();
 }
