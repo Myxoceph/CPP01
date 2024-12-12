@@ -6,7 +6,7 @@
 /*   By: abakirca <abakirca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:51:32 by abakirca          #+#    #+#             */
-/*   Updated: 2024/11/14 17:14:51 by abakirca         ###   ########.fr       */
+/*   Updated: 2024/12/12 13:31:44 by abakirca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void Harl::complain(std::string level)
 			break;
 
 		default:
-			std::cout << "[ Probably babbling about how Griffith is right ]" << std::endl << std::endl;
+			std::cout << "[ Probably babbling about how Griffith was right ]" << std::endl << std::endl;
 	}
 
 }

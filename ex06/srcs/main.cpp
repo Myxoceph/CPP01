@@ -6,7 +6,7 @@
 /*   By: abakirca <abakirca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:57:50 by abakirca          #+#    #+#             */
-/*   Updated: 2024/11/14 15:20:08 by abakirca         ###   ########.fr       */
+/*   Updated: 2024/12/12 13:46:49 by abakirca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int main(int ac, char **av)
 	if (ac == 2)
 		harl.complain(av[1]);
 	else
-		return (std::cout << "Too many arguments!" << std::endl, 1);
+		return (std::cout << "Invalid Arguments!" << std::endl, 1);
 	
 }

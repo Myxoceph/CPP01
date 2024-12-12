@@ -6,7 +6,7 @@
 /*   By: abakirca <abakirca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 18:02:54 by abakirca          #+#    #+#             */
-/*   Updated: 2024/11/15 13:39:04 by abakirca         ###   ########.fr       */
+/*   Updated: 2024/12/12 13:53:26 by abakirca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,26 @@ void replace(char **av)
 	}
 	fileoutname.append(".replace");
 	fileout.open(fileoutname.c_str(), std::ios::out);
+	if (!fileout.is_open())
+	{
+		std::cerr << "Cannot create .replace file." << std::endl;
+		return;
+	}
 	while (std::getline(filein, read))
-    {
-        startPos = 0;
-        modifiedLine.clear();
-        while ((startPos = read.find(oldString, startPos)) != std::string::npos)
-        {
-            modifiedLine.append(read.substr(0, startPos));
-            modifiedLine.append(newString);
-            startPos += oldString.length();
-            read = read.substr(startPos);
-            startPos = 0;
-        }
-        modifiedLine.append(read);
-        
-        fileout << modifiedLine << std::endl;
-    }
+	{
+		startPos = 0;
+		modifiedLine.clear();
+		while ((startPos = read.find(oldString, startPos)) != std::string::npos)
+		{
+			modifiedLine.append(read.substr(0, startPos));
+			modifiedLine.append(newString);
+			startPos += oldString.length();
+			read = read.substr(startPos);
+			startPos = 0;
+		}
+		modifiedLine.append(read);
+		fileout << modifiedLine << std::endl;
+	}
 	filein.close();
 	fileout.close();
 }
